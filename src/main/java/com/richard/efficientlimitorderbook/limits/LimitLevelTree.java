@@ -1,4 +1,4 @@
-package main.limits;
+package com.richard.efficientlimitorderbook.limits;
 
 import java.util.Collections;
 import java.util.TreeMap;

@@ -1,8 +1,8 @@
-package main.order;
+package com.richard.efficientlimitorderbook.order;
 
 import java.time.Instant;
 
-import main.limits.LimitLevel;
+import com.richard.efficientlimitorderbook.limits.LimitLevel;
 
 /**
  * Represents an order in a trading system.

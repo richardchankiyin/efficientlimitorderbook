@@ -1,4 +1,4 @@
-package main;
+package com.richard.efficientlimitorderbook;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.TreeMap;
 
-import main.limits.LimitLevel;
-import main.limits.LimitLevelTree;
-import main.order.Order;
+import com.richard.efficientlimitorderbook.limits.LimitLevel;
+import com.richard.efficientlimitorderbook.limits.LimitLevelTree;
+import com.richard.efficientlimitorderbook.order.Order;
 
 /**
  * Represents a limit order book in a trading system.

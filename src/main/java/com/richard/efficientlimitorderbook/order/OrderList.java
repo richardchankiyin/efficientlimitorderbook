@@ -1,6 +1,6 @@
-package main.order;
+package com.richard.efficientlimitorderbook.order;
 
-import main.limits.LimitLevel;
+import com.richard.efficientlimitorderbook.limits.LimitLevel;
 
 /**
  * Represents a list of orders in a trading system.
