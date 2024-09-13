@@ -10,10 +10,14 @@ import com.richard.efficientlimitorderbook.limits.LimitLevel;
 import com.richard.efficientlimitorderbook.limits.LimitLevelTree;
 import com.richard.efficientlimitorderbook.order.Order;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * Represents a limit order book in a trading system.
  */
 public class LimitOrderBook {
+	private static final Logger logger = LoggerFactory.getLogger(LimitOrderBook.class);
+
     private LimitLevelTree bids; // Tree for bid (buy) limit levels
     private LimitLevelTree asks; // Tree for ask (sell) limit levels
     private TreeMap<Double, LimitLevel> priceLevelsMap; // Map of price levels to limit levels
@@ -209,15 +213,20 @@ public class LimitOrderBook {
         }
 
         HashMap<String, List<LimitLevel>> levelsDict = new HashMap<>();
-        System.out.println("BIDS");
+        logger.debug("BIDS");
         for (int idx = bids.size() - 1; idx >= 0; idx--) {
             LimitLevel i = bids.get(idx);
-            System.out.println(i.getPrice() + "--" + i.getSize());
+            
+            if (logger.isDebugEnabled()) {
+            	logger.debug("{} -- {}", i.getPrice(), i.getSize());
+            }
         }
-        System.out.println("---------------");
-        System.out.println("ASKS");
+        logger.debug("---------------");
+        logger.debug("ASKS");
         for (LimitLevel i : asks) {
-            System.out.println(i.getPrice() + "--" + i.getSize());
+        	if (logger.isDebugEnabled()) {
+            	logger.debug("{} -- {}", i.getPrice(), i.getSize());
+            }
         }
         levelsDict.put("bids", bids);
         levelsDict.put("asks", asks);
